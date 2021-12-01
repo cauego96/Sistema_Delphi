@@ -83,6 +83,11 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <DCC_ExeOutput>C:\Users\caueg\Documents\Delphi - Projeto Curso Básico\Exe\</DCC_ExeOutput>
+        <DCC_DcuOutput>C:\Users\caueg\Documents\Delphi - Projeto Curso Básico\dcu\</DCC_DcuOutput>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Icon_MainIcon>prjCursoBasico_Icon.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -100,6 +105,16 @@
         </DelphiCompile>
         <DCCReference Include="Forms\uFormMain.pas">
             <Form>FormMain</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Forms\uDmDados.pas">
+            <Form>dmDados</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Classes\uBiblioteca.pas"/>
+        <DCCReference Include="Forms\uFormConfigBanco.pas">
+            <Form>FormConfigBanco</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
@@ -122,9 +137,13 @@
                 <Source>
                     <Source Name="MainSource">prjCursoBasico.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="Win32\Debug\prjCursoBasico.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Exe\prjCursoBasico.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>prjCursoBasico.exe</RemoteName>
                         <Overwrite>true</Overwrite>
